@@ -125,7 +125,7 @@ $(document).ready(function() {
 
         // Populate a list of values that are still available on the card.
         var available = []
-        for (var i = 1; i < 9; i += 1) {
+        for (var i = 1; i <= 9; i += 1) {
             if (typeof matrix[i] === 'undefined') {
                 available.push(i)
             }
