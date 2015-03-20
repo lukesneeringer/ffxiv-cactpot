@@ -1,0 +1,20 @@
+---
+- name: fail2ban.restart
+  service:
+    name: fail2ban
+    state: restarted
+
+- name: iptables.rebuild
+  assemble:
+    dest: /etc/iptables/general
+    group: root
+    mode: 00644
+    owner: root
+    src: /etc/iptables.d
+  notify:
+    - iptables.reload
+
+- name: iptables.reload
+  shell: /etc/network/if-pre-up.d/iptables_load
+  notify:
+    - fail2ban.restart

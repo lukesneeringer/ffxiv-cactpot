@@ -1,0 +1,8 @@
+---
+- name: Check out the cactpot code from git.
+  git:
+    accept_hostkey: yes
+    dest: /var/www/ffxiv-cactpot/
+    repo: git@github.com:lukesneeringer/ffxiv-cactpot.git
+  notify: nginx.reload
+  when: not vagrant

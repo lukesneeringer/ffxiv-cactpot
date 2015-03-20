@@ -1,0 +1,16 @@
+---
+- name: Place the cactpot nginx configuration.
+  template:
+    dest: /etc/nginx/sites-available/cactpot
+    group: www-data
+    mode: 0664
+    owner: www-data
+    src: cactpot.nginx.j2
+  notify: nginx.reload
+
+- name: Symlink the cactpot nginx configuration into sites-enabled.
+  file:
+    path: /etc/nginx/sites-enabled/001-cactpot
+    src: /etc/nginx/sites-available/cactpot
+    state: link
+  notify: nginx.reload

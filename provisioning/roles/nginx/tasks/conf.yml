@@ -1,0 +1,49 @@
+---
+- name: Place the base Nginx config file.
+  template:
+    dest: /etc/nginx/nginx.conf
+    group: root
+    mode: 00644
+    owner: root
+    src: nginx/nginx.conf.j2
+  notify:
+    - nginx.restart
+
+- name: Start nginx.
+  service:
+    name: nginx
+    state: started
+
+- name: Remove default nginx site.
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify:
+    - nginx.reload
+
+- name: Place a handler for undefined requests.
+  copy:
+    backup: yes
+    dest: /etc/nginx/sites-available/undefined_reqs
+    group: root
+    mode: 0644
+    owner: root
+    src: nginx/undefined_reqs
+
+- name: Link the undefined_reqs handler to sites-enabled.
+  file:
+    path: /etc/nginx/sites-enabled/000-undefined_reqs
+    src: /etc/nginx/sites-available/undefined_reqs
+    state: link
+  notify:
+    - nginx.reload
+
+- name: Allow Nginx access on ports 80/443.
+  copy:
+    dest: /etc/iptables.d/200-nginx-http
+    group: root
+    mode: 00644
+    owner: root
+    src: nginx/iptables_config
+  notify:
+    - iptables.rebuild

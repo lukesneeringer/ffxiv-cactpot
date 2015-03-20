@@ -1,0 +1,62 @@
+---
+- name: Install iptables.
+  apt:
+    pkg: iptables
+    state: present
+  notify: iptables.rebuild
+
+- name: Create a home for iptables config snippets.
+  file:
+    group: root
+    mode: 02775
+    owner: root
+    path: /etc/iptables.d
+    state: directory
+
+- name: Ensure the generic chain path exists.
+  file:
+    group: root
+    mode: 02755
+    owner: root
+    path: /etc/iptables
+    state: directory
+
+- name: Place a super special script to reload the iptables chain.
+  copy:
+    dest: /etc/network/if-pre-up.d/iptables_load
+    group: root
+    mode: 00755
+    owner: root
+    src: iptables/iptables_load.sh
+
+- name: Place the default iptables rules.
+  copy:
+    dest: /etc/iptables.d/{{ item }}
+    group: root
+    mode: 00644
+    owner: root
+    src: iptables/rules/{{ item }}
+  with_items:
+    - 000-chain-header
+    - 001-allow-established
+    - 002-allow-icmp
+    - 003-allow-ntp
+    - 004-allow-ssh
+    - 999-reject-all-remaining
+  notify:
+    - iptables.rebuild
+
+- name: Install fail2ban.
+  apt:
+    pkg: fail2ban
+    state: present
+
+- name: Place the fail2ban jail file.
+  copy:
+    dest: /etc/fail2ban/jail.local
+    group: root
+    mode: 00644
+    owner: root
+    src: iptables/jail.local
+  notify:
+    - fail2ban.restart

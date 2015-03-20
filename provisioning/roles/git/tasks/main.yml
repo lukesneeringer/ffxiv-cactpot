@@ -1,0 +1,15 @@
+---
+- name: Add Git Repository Key.
+  apt_key:
+    state: present
+    url: "http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0xA1715D88E1DF1F24"
+
+- name: Add the Git PPA.
+  apt_repository:
+    repo: ppa:git-core/ppa
+    state: present
+    update_cache: yes
+
+- name: Install the latest Git.
+  apt:
+    pkg: git

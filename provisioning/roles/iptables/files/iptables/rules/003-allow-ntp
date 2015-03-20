@@ -1,0 +1,2 @@
+# Allow NTP connections
+-A FWR -p udp --dport 123 -j ACCEPT

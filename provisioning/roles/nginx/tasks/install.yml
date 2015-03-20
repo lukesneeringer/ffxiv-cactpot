@@ -1,0 +1,50 @@
+---
+- name: Add the Nginx repository key.
+  apt_key:
+    state: present
+    url: "http://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x8B3981E7A6852F782CC4951600A6F0A3C300EE8C"
+
+- name: Add the Nginx stable repository.
+  apt_repository:
+    repo: ppa:nginx/stable
+    state: present
+    update_cache: yes
+
+- name: Install Nginx.
+  apt:
+    pkg: nginx-full
+
+- name: Add the www-data user to the users group.
+  user:
+    name: www-data
+    append: yes
+    groups: users
+
+- name: Start Nginx startup on boot.
+  service:
+    name: nginx
+    enabled: yes
+
+- name: Create a folder for things that Nginx will serve.
+  file:
+    group: users
+    mode: 02775
+    owner: www-data
+    path: /var/www    
+    state: directory
+
+- name: Create a folder for the Nginx cache.
+  file:
+    group: users
+    mode: 02775
+    owner: www-data
+    path: /var/nginx/cache
+    state: directory
+
+- name: Create a home for the SSL certs(s).
+  file:
+    group: root
+    mode: 0755
+    owner: root
+    path: /etc/nginx/ssl
+    state: directory

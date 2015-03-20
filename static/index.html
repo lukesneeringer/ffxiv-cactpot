@@ -1,0 +1,242 @@
+<doctype html>
+<html lang="en">
+  <head>
+    <title>FFXIV: Mini Cactpot</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="cactpot.js"></script>
+    <link rel="stylesheet" href="cactpot.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  </head>
+  <body>
+    <header>Mini Cactpot</header>
+
+    <section class="grid">
+      <div class="content">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1100 1100">
+          <defs>
+            <linearGradient id="cactpot-node" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: #e3cd7d; stop-opacity: 1" />
+              <stop offset="25%" style="stop-color: #b7a565; stop-opacity: 1" />
+              <stop offset="75%" style="stop-color: #b7a565; stop-opacity: 1" />
+              <stop offset="100%" style="stop-color: #8f814f; stop-opacity: 1" />
+            </linearGradient>
+          </defs>
+
+          <!-- First row -->
+          <g class="scratch" data-cell="73" transform="translate(100, 100)">
+            <circle cx="150" cy="150" r="130" fill="url(#cactpot-node)"></circle>
+          </g>
+          <g class="scratch" data-cell="17" transform="translate(400, 100)">
+            <circle cx="150" cy="150" r="130" fill="url(#cactpot-node)"></circle>
+          </g>
+          <g class="scratch" data-cell="161" transform="translate(700, 100)">
+            <circle cx="150" cy="150" r="130" fill="url(#cactpot-node)"></circle>
+          </g>
+
+          <!-- Second row -->
+          <g class="scratch" data-cell="10" transform="translate(100, 400)">
+            <circle cx="150" cy="150" r="130" fill="url(#cactpot-node)"></circle>
+          </g>
+          <g class="scratch" data-cell="210" transform="translate(400, 400)">
+            <circle cx="150" cy="150" r="130" fill="url(#cactpot-node)"></circle>
+          </g>
+          <g class="scratch" data-cell="34" transform="translate(700, 400)">
+            <circle cx="150" cy="150" r="130" fill="url(#cactpot-node)"></circle>
+          </g>
+
+          <!-- Third row -->
+          <g class="scratch" data-cell="140" transform="translate(100, 700)">
+            <circle cx="150" cy="150" r="130" fill="url(#cactpot-node)"></circle>
+          </g>
+          <g class="scratch" data-cell="20" transform="translate(400, 700)">
+            <circle cx="150" cy="150" r="130" fill="url(#cactpot-node)"></circle>
+          </g>
+          <g class="scratch" data-cell="100" transform="translate(700, 700)">
+            <circle cx="150" cy="150" r="130" fill="url(#cactpot-node)"></circle>
+          </g>
+
+          <!-- Arrows and Expected Values, Rows -->
+          <g class="choice" data-bitval="1" transform="translate(50, 250)">
+            <g class="arrow">
+              <circle r="40" fill="transparent" stroke-width="5"
+                      stroke="#606060"></circle>
+              <line x1="-25" x2="25" y1="0" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="-15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+            </g>
+          </g>
+          <g class="choice" data-bitval="2" transform="translate(50, 550)">
+            <g class="arrow">
+              <circle r="40" fill="transparent" stroke-width="5"
+                      stroke="#606060"></circle>
+              <line x1="-25" x2="25" y1="0" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="-15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+            </g>
+          </g>
+          <g class="choice" data-bitval="4" transform="translate(50, 850)">
+            <g class="arrow">
+              <circle r="40" fill="transparent" stroke-width="5"
+                      stroke="#606060"></circle>
+              <line x1="-25" x2="25" y1="0" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="-15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+            </g>
+          </g>
+
+          <!-- Arrows and Expected Values, Columns -->
+          <g class="choice" data-bitval="8" transform="translate(250, 50)">
+            <g class="arrow" transform="rotate(90)">
+              <circle r="40" fill="transparent" stroke-width="5"
+                      stroke="#606060"></circle>
+              <line x1="-25" x2="25" y1="0" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="-15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+            </g>
+          </g>
+          <g class="choice" data-bitval="16" transform="translate(550, 50)">
+            <g class="arrow" transform="rotate(90)">
+              <circle r="40" fill="transparent" stroke-width="5"
+                      stroke="#606060"></circle>
+              <line x1="-25" x2="25" y1="0" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="-15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+            </g>
+          </g>
+          <g class="choice" data-bitval="32" transform="translate(850, 50)">
+            <g class="arrow" transform="rotate(90)">
+              <circle r="40" fill="transparent" stroke-width="5"
+                      stroke="#606060"></circle>
+              <line x1="-25" x2="25" y1="0" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="-15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+            </g>
+          </g>
+
+          <!-- Arrows and Expected Values, Diagonals -->
+          <g class="choice" data-bitval="64" transform="translate(50, 50)">
+            <g class="arrow" transform="rotate(45)">
+              <circle r="40" fill="transparent" stroke-width="5"
+                      stroke="#606060"></circle>
+              <line x1="-25" x2="25" y1="0" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="-15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+            </g>
+          </g>
+          <g class="choice" data-bitval="128" transform="translate(1050, 50)">
+            <g class="arrow" transform="rotate(135)">
+              <circle r="40" fill="transparent" stroke-width="5"
+                      stroke="#606060"></circle>
+              <line x1="-25" x2="25" y1="0" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="-15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+              <line x1="10" x2="25" y1="15" y2="0" stroke-width="5"
+                      stroke="#606060"></line>
+            </g>
+          </g>
+        </svg>
+      </div> <!-- content -->
+
+      <div id="stdin-container">
+        <input id="stdin" type="number" pattern="[0-9]*" maxlength="1" />
+      </div>
+    </section>
+
+    <section class="legend">
+      <div class="legend-h1">Payout</div>
+
+      <div class="legend-col">
+        <div class="legend-header">Sum</div>
+        <div class="legend-header">MGP</div>
+
+        <div class="legend-sum">6</div>
+        <div class="legend-mgp" data-sum="6">10,000</div>
+
+        <div class="legend-sum">7</div>
+        <div class="legend-mgp" data-sum="7">36</div>
+
+        <div class="legend-sum">8</div>
+        <div class="legend-mgp" data-sum="8">720</div>
+
+        <div class="legend-sum">9</div>
+        <div class="legend-mgp" data-sum="9">360</div>
+
+        <div class="legend-sum">10</div>
+        <div class="legend-mgp" data-sum="10">80</div>
+
+        <div class="legend-sum">11</div>
+        <div class="legend-mgp" data-sum="11">252</div>
+
+        <div class="legend-sum">12</div>
+        <div class="legend-mgp" data-sum="12">108</div>
+
+        <div class="legend-sum">13</div>
+        <div class="legend-mgp" data-sum="13">72</div>
+
+        <div class="legend-sum">14</div>
+        <div class="legend-mgp" data-sum="14">54</div>
+
+        <div class="legend-sum">15</div>
+        <div class="legend-mgp" data-sum="15">180</div>
+      </div>
+
+      <div class="legend-col">
+        <div class="legend-header">Sum</div>
+        <div class="legend-header">MGP</div>
+
+        <div class="legend-sum">16</div>
+        <div class="legend-mgp" data-sum="16">72</div>
+
+        <div class="legend-sum">17</div>
+        <div class="legend-mgp" data-sum="17">180</div>
+
+        <div class="legend-sum">18</div>
+        <div class="legend-mgp" data-sum="18">119</div>
+
+        <div class="legend-sum">19</div>
+        <div class="legend-mgp" data-sum="19">36</div>
+
+        <div class="legend-sum">20</div>
+        <div class="legend-mgp" data-sum="20">306</div>
+
+        <div class="legend-sum">21</div>
+        <div class="legend-mgp" data-sum="21">1,080</div>
+
+        <div class="legend-sum">22</div>
+        <div class="legend-mgp" data-sum="22">144</div>
+
+        <div class="legend-sum">23</div>
+        <div class="legend-mgp" data-sum="23">1,800</div>
+
+        <div class="legend-sum">24</div>
+        <div class="legend-mgp" data-sum="24">3,600</div>
+      </div>
+    </section>
+
+    <footer>
+      FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.
+    </footer>
+  </body>
+</html>

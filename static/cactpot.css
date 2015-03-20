@@ -1,0 +1,112 @@
+* {
+  box-sizing: inherit;
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  background-color: #202020;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Lucida Bright", Georgia, "Times New Roman", serif;
+  font-size: 36px;
+  padding-bottom: 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+/* Grid */
+section.grid {
+  position: relative;
+  padding: 5%;
+}
+
+section.grid .content {
+  position: relative;
+}
+
+section.grid .content:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+section.grid .content > svg {
+  position: absolute;
+  top: 0px; 
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+section.grid #stdin-container {
+  opacity: 0;
+}
+
+
+/* Legend */
+section.legend {
+  position: relative;
+  padding: 5%;
+}
+
+.legend-h1 {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Lucida Bright", Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+.legend-col {
+  position: relative;
+  float: left;
+  width: 49.95%;
+}
+
+.legend-header, .legend-sum, .legend-mgp {
+  float: left;
+  width: 49.95%;
+}
+
+.legend-header {
+  color: #a0a0a0;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.legend-sum {
+  color: #b7a565;
+  text-align: center;
+}
+
+.legend-mgp {
+  color: white;
+  text-align: right;
+}
+
+
+/* Responsive Layout */
+@media all and (min-width: 768px) {
+  section.grid, section.legend {
+    float: left;
+    width: 49.95%;
+  }
+}
+
+footer {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 24px;
+  clear: both;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  width: 100%;
+}

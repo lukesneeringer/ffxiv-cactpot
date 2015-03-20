@@ -1,0 +1,7 @@
+- hosts: all
+  remote_user: root
+  roles:
+    - iptables
+    - git
+    - nginx
+    - cactpot
